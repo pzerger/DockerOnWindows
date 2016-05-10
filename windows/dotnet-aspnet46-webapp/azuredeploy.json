@@ -61,7 +61,7 @@
     "OSDiskName": "[concat(parameters('VMName'),'_osdisk')]",
     "nicName": "[concat(parameters('VMName'),'_nic')]",
     "addressPrefix": "10.0.0.0/16",
-    "subnetName": "[concat(parameters('VMName'),'_subnet')]",
+    "subnetName": "default",
     "subnetPrefix": "10.0.0.0/24",
     "networkSecurityGroupName": "[concat(parameters('VMName'),'_nsg')]",
     "newStorageAccountName": "[concat(uniqueString(resourceGroup().id),'winrmsa')]",
@@ -71,7 +71,7 @@
     "hostDNSNameScriptArgument": "[concat('*.',resourceGroup().location,'.cloudapp.azure.com')]",
     "vmStorageAccountContainerName": "vhds",
     "apiVersion": "2015-05-01-preview",
-    "virtualNetworkName": "[concat(parameters('VMName'),'_vnet')]",
+    "virtualNetworkName": "swarmnet",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
   },
